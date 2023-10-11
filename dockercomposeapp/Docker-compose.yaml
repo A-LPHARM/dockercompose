@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  webapp:
+    container_name: webapp
+    build: .
+    volumes:
+      - .:/code
+    ports: 
+      - "8775:5000"
+  redis:
+    container_name: redis-backend
+    image: redis:alpine
+      

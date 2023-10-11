@@ -1,0 +1,34 @@
+Version: "3.9"
+#specify the compose format that this files composed of
+services:
+#specify the set of containers that your app is composed of
+  servicename1:
+  #same as 'docker container run'
+  #used as the DNS name inside the network, or the name of the container you are building
+    build:
+    #optional tag- this is to build an image from the dockerfile
+    image: 
+    #tag or partial image id to build an image from local or remote repo 
+    #to pull from docker hub and build typically
+    command:
+    # overriden the default command
+    #commands to run in the image before it starts
+    environment:
+    #you add your environment variables like secrets, data, username, password
+    volumes:
+    # same as your -v tag with docker container run
+    # attach your volume here
+  serviceimage2:
+    build:
+      #context: contextPath
+      #dockerfile: Dockerfile
+    image: #the image name
+    container_name: #what you name the container
+    environment:
+      #- name=value
+    volumes:
+      #-volumeName:containerPath:ro
+    ports:
+      #-"8080:80"
+  volumes: #same as docker volume create: all the container use this volume
+  networks: #same as docker network create; all the container are in this network
